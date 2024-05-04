@@ -1,7 +1,8 @@
 version: "3.7"
 
 services:
-    sistema_gestao:
+    biblioteca:
+        container_name: biblioteca_laravel10
         build:
             context: .
             dockerfile: Dockerfile
@@ -10,7 +11,7 @@ services:
         volumes:
             - ./:/var/www
         networks:
-            - sistema-getao-network
+            - biblioteca-network
     # nginx
     nginx:
         container_name: servidor-nginx
@@ -22,7 +23,7 @@ services:
             - ./:/var/www
             - ./docker/nginx/:/etc/nginx/conf.d/
         networks:
-            - sistema-getao-network
+            - biblioteca-network
      # db mysql ${DB_DATABASE} //Busca do arquivo .env
     mysql:
         container_name: banco-mysql
@@ -38,7 +39,7 @@ services:
         ports:
             - "3388:3306"
         networks:
-            - sistema-getao-network
+            - biblioteca-network
 
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
@@ -51,10 +52,10 @@ services:
         ports:
             - 8899:80
         networks:
-            - sistema-getao-network
+            - biblioteca-network
 
 networks:
-    sistema-getao-network:
+    biblioteca-network:
         driver: bridge
 
 #Doc. de utilizacao
