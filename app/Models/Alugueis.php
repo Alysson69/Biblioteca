@@ -10,14 +10,14 @@ class Alugueis extends Model
     use HasFactory;
 
     public function getAlugueisPesquisa(string $search = '') {
-        $alugueis = '';
-        $alugueis = $this->where(function ($query) use ($search){
-            if( $search){
-                $query->where('livro_id', $search);
-                $query->orWhere('livro_id', 'LIKE', "%{$search}%");
-                $query->orWhere('usuario_id', 'LIKE', "%{$search}%");
-            }
-        })->get();
+        // $alugueis = $this->where(function ($query) use ($search){
+        //     if( $search){
+        //         $query->where('livro_id', $search);
+        //         $query->orWhere('livro_id', 'LIKE', "%{$search}%");
+        //         $query->orWhere('usuario_id', 'LIKE', "%{$search}%");
+        //     }
+        // })->get();
+        $alugueis = $this->all();
         return $alugueis;
     }
 

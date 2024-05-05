@@ -12,7 +12,7 @@
             <div class="invalid-feedback">{{ $errors->first('nome') }}</div>
         @endif
         <label class="form-label">CPF:</label>
-        <input type="text" name="cpf"  onkeydown="javascript: fMasc( this, mCPF );" value="{{ old('cpf') }}" class="form-control @error('cpf') is-invalid @enderror">
+        <input type="text" name="cpf"  maxlength="14" onkeydown="javascript: fMasc( this, mCPF );" value="{{ old('cpf') }}" class="form-control @error('cpf') is-invalid @enderror">
         @if($errors->has('cpf'))
             <div class="invalid-feedback">{{ $errors->first('cpf') }}</div>
         @endif

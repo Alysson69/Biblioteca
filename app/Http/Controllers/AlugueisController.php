@@ -15,8 +15,15 @@ class AlugueisController extends Controller
     }
 
     public function index(Request $request) {
-        $pesquisar = $request->pesquisar;
-        $getAlugueis = $this->alugueis->getAlugueisPesquisa(search: $pesquisar ?? '');
+        $pesquisa = $request->pesquisa;
+        if($request->pesquisa = 1){
+            $pesquisa1 = $request->pesquisa1;
+            $getAlugueis = $this->alugueis->getAlugueisPesquisa(search: $pesquisa1 ?? '');
+
+        }elseif($request->pesquisa = 2){
+            $pesquisa2 = $request->pesquisa2;
+            $getAlugueis = $this->alugueis->getAlugueisPesquisa(search: $pesquisa2 ?? '');
+        }
 
         return view('alugueis.paginacao', compact('getAlugueis'));
     }

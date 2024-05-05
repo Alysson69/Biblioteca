@@ -5,13 +5,6 @@
     <h1 class="h2">Biblioteca AdamRobo</h1>
   </div>
   <div>
-    <form action="{{ route('alugueis.index') }}" method="get">  
-      <input type="text" name="pesquisar" placeholder="Digite o nome do Livro" />
-      <button>Pesquisar</button>
-      <a type="button" href="{{route('cadastrar.aluguel')}}" class="btn btn-success float-end">
-        Adicionar Novo Aluguel
-      </a>
-    </form>
     <h2>Alugueis</h2>
     <div class="table-responsive small mt-4">
       @if($getAlugueis->isEmpty())
