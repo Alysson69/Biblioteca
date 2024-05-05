@@ -18,6 +18,11 @@ class Livros extends Model
         })->get();
         return $livros;
     }
+
+    public function aluguel()
+    {
+        return $this->hasOne(Alugueis::class);
+    }
 }
 
 

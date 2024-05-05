@@ -11,11 +11,11 @@ class LivrosSeeder extends Seeder
     
     public function run(): void
     {
-        Livros::create([
-            'nome' => 'Contos de Adan'
-        ]);
-        Livros::create([
-            'nome' => 'Robo Amigo'
-        ]);
+        // Livros::create([
+        //     'nome' => 'Contos de Adan'
+        // ]);
+        // Livros::create([
+        //     'nome' => 'Robo Amigo'
+        // ]);
     }
 }

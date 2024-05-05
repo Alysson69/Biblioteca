@@ -1,3 +1,13 @@
+var options = {
+    onKeyPress: function (cpf, ev, el, op) {
+        var masks = ['000.000.000-00'];
+        $('.cpfOuCnpj').mask( masks[0]);
+    }
+}
+
+ $('.cpfOuCnpj').mask('000.000.000-00');
+
+
 function deleteRegistroPaginacao(rotaUrl, idRegistro){
     if (confirm('Deseja realmente excluir?')){
         $.ajax({

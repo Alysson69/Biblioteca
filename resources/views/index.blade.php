@@ -141,6 +141,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js"></script>
     <script src="{{ asset('js/biblioteca.js')}}"></script>
     <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+
+    <script src="http://www.geradorcpf.com/scripts.js"></script>
+    <script src="http://www.geradorcpf.com/jquery-1.2.6.pack.js"></script>
+    <script src="http://www.geradorcpf.com/jquery.maskedinput-1.1.4.pack.js"></script>
+
+
+    <script>
+    function ValidaCPF(){	
+      var RegraValida=document.getElementById("RegraValida").value; 
+      var cpfValido = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;	 
+      if (cpfValido.test(RegraValida) == true)	{ 
+      console.log("CPF Válido");	
+      } else	{	 
+      console.log("CPF Inválido");	
+      }
+        }
+      function fMasc(objeto,mascara) {
+    obj=objeto
+    masc=mascara
+    setTimeout("fMascEx()",1)
+    }
+
+      function fMascEx() {
+    obj.value=masc(obj.value)
+    }
+
+      function mCPF(cpf){
+    cpf=cpf.replace(/\D/g,"")
+    cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+    cpf=cpf.replace(/(\d{3})(\d)/,"$1.$2")
+    cpf=cpf.replace(/(\d{3})(\d{1,2})$/,"$1-$2")
+    return cpf
+    }
+  </script>
     {!! Toastr::message() !!}
 
   </body>

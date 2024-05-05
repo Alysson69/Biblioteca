@@ -39,3 +39,13 @@ Route::prefix('usuarios')->group(function () {
     Route::get('/atualizarUsuario/{id}', [UsuariosController::class, 'atualizarUsuario'])->name('atualizar.usuario');
     Route::put('/atualizarUsuario/{id}', [UsuariosController::class, 'atualizarUsuario'])->name('atualizar.usuario');
 });
+Route::prefix('alugueis')->group(function () {
+    Route::get('/', [AlugueisController::class, 'index'])->name('alugueis.index');
+    Route::delete('/delete', [AlugueisController::class, 'delete'])->name('aluguel.delete');
+    //create
+    Route::get('/cadastrarAluguel', [AlugueisController::class, 'cadastrarAluguel'])->name('cadastrar.aluguel');
+    Route::post('/cadastrarAluguel', [AlugueisController::class, 'cadastrarAluguel'])->name('cadastrar.aluguel');
+    //update
+    Route::get('/atualizarAluguel/{id}', [AlugueisController::class, 'atualizarAluguel'])->name('atualizar.aluguel');
+    Route::put('/atualizarAluguel/{id}', [AlugueisController::class, 'atualizarAluguel'])->name('atualizar.aluguel');
+});

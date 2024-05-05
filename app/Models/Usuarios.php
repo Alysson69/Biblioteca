@@ -19,4 +19,9 @@ class Usuarios extends Model
         })->get();
         return $usuarios;
     }
+
+    public function aluguel()
+    {
+        return $this->hasMany(Alugueis::class);
+    }
 }
