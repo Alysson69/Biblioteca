@@ -32,13 +32,13 @@
                 <td>{{ $livro->id }}</td>
                 <td>{{ $livro->nome }}</td>
                 <td>
-                  <a type="button" href="" class="btn btn-light float-end">
+                  <a type="button" href="{{ route('atualizar.livro', $livro->id) }}" class="btn btn-light float-end">
                     Editar
                   </a> 
                 </td>
                 <td>
                   <meta name="csrf-token" content="{{ csrf_token() }}" />
-                  <a type="button" onclick="deleteRegistroPaginacao('{{route('livros.delete')}}', {{$livro->id}})" class="btn btn-danger float-end">
+                  <a type="button" onclick="deleteRegistroPaginacao('{{route('livro.delete')}}', {{$livro->id}})" class="btn btn-danger float-end">
                     Excluir
                   </a> 
                 </td>

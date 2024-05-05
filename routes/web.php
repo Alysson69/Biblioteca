@@ -21,7 +21,11 @@ Route::get('/', function () {
 });
 Route::prefix('livros')->group(function () {
     Route::get('/', [LivrosController::class, 'index'])->name('livros.index');
-    Route::delete('/delete', [LivrosController::class, 'delete'])->name('livros.delete');
+    Route::delete('/delete', [LivrosController::class, 'delete'])->name('livro.delete');
+    //create
     Route::get('/cadastrarLivro', [LivrosController::class, 'cadastrarLivro'])->name('cadastrar.livro');
     Route::post('/cadastrarLivro', [LivrosController::class, 'cadastrarLivro'])->name('cadastrar.livro');
+    //update
+    Route::get('/atualizarLivro/{id}', [LivrosController::class, 'atualizarLivro'])->name('atualizar.livro');
+    Route::put('/atualizarLivro/{id}', [LivrosController::class, 'atualizarLivro'])->name('atualizar.livro');
 });
