@@ -29,3 +29,13 @@ Route::prefix('livros')->group(function () {
     Route::get('/atualizarLivro/{id}', [LivrosController::class, 'atualizarLivro'])->name('atualizar.livro');
     Route::put('/atualizarLivro/{id}', [LivrosController::class, 'atualizarLivro'])->name('atualizar.livro');
 });
+Route::prefix('usuarios')->group(function () {
+    Route::get('/', [UsuariosController::class, 'index'])->name('usuarios.index');
+    Route::delete('/delete', [UsuariosController::class, 'delete'])->name('usuario.delete');
+    //create
+    Route::get('/cadastrarUsuario', [UsuariosController::class, 'cadastrarUsuario'])->name('cadastrar.usuario');
+    Route::post('/cadastrarUsuario', [UsuariosController::class, 'cadastrarUsuario'])->name('cadastrar.usuario');
+    //update
+    Route::get('/atualizarUsuario/{id}', [UsuariosController::class, 'atualizarUsuario'])->name('atualizar.usuario');
+    Route::put('/atualizarUsuario/{id}', [UsuariosController::class, 'atualizarUsuario'])->name('atualizar.usuario');
+});

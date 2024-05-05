@@ -32,7 +32,6 @@ class LivrosController extends Controller
             $livro->save();
 
             return redirect()->route('livros.index');
-
         };
         return view('livros.create');
     }
@@ -47,7 +46,7 @@ class LivrosController extends Controller
             return redirect()->route('livros.index');
         };
         $getLivro = Livros::where('id', $id)->first();
-        
+
         return view('livros.atualiza', compact('getLivro'));
     }
 

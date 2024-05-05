@@ -10,6 +10,15 @@
         'dev' => true,
     ),
     'versions' => array(
+        'brian2694/laravelToastr' => array(
+            'pretty_version' => '5.59',
+            'version' => '5.59.0.0',
+            'reference' => '60f90a7b25973549c3992b3dc5965d4f0e27838c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../brian2694/laravelToastr',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.12.1',
             'version' => '0.12.1.0',
