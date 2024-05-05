@@ -93,6 +93,17 @@ php artisan key:generate
 ```
 
 
+Execute as migration 
+```sh
+php artisan migrate
+```
+
+Execute os Deeders
+```sh
+php artisan db:seed
+```
+
+
 Acesse o projeto
 [http://localhost:8989](http://localhost:8989)
 
